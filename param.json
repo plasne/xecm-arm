@@ -1,0 +1,8 @@
+{
+   "salesForceOrgId": {
+        "value": "sfdctest02"
+    },
+    "adminPassword": {
+        "value": "Testing000!!!"
+    }
+}
