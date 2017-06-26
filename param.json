@@ -3,8 +3,7 @@
         "value": "sfdctest03"
     },
     "virtualNetworkResourceGroup": {
-        "value": "pelasne-support",
-        "actual-value": "xecmsfdc"
+        "value": "pelasne-support"
     },
     "virtualNetworkName": {
         "value": "otxecm-uswest"
