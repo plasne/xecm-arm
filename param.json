@@ -1,8 +1,15 @@
 {
    "salesForceOrgId": {
-        "value": "sfdctest02"
+        "value": "sfdctest03"
     },
-    "adminPassword": {
-        "value": "Testing000!!!"
+    "virtualNetworkResourceGroup": {
+        "value": "pelasne-support",
+        "actual-value": "xecmsfdc"
+    },
+    "virtualNetworkName": {
+        "value": "otxecm-uswest"
+    },
+    "subnetName": {
+        "value": "default"
     }
 }

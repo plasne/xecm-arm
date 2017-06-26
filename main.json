@@ -7,11 +7,20 @@
         },
         "adminPassword": {
             "type": "securestring"
+        },
+        "virtualNetworkResourceGroup": {
+            "type": "string"
+        },
+        "virtualNetworkName": {
+            "type": "string"
+        },
+        "subnetName": {
+            "type": "string"
         }
     },
     "variables": {
-        "virtualNetworkName":"otxecm-uswest",
-        "subnetName":"default",
+        "virtualNetworkName":"[parameters('virtualNetworkName')]",
+        "subnetName":"[parameters('subnetName')]",
         "networkInterfaceName": "[concat(parameters('salesForceOrgId'),'-nic')]",
         "virtualMachineName": "[concat(parameters('salesForceOrgId'),'-vm')]",
         "adminUserName": "sfdcadmin",
@@ -20,7 +29,7 @@
         "networkSecurityGroupName":"[concat(parameters('salesForceOrgId'),'-nsg')]",
         "sqlServerName": "[concat(parameters('salesForceOrgId'), '-sql')]",
         "sqlServerDbName": "[concat(parameters('salesForceOrgId'), '-db')]",
-        "vnetId": "[resourceId('xecmsfdc','Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
+        "vnetId": "[resourceId(parameters('virtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]"
     },
     "resources": [
