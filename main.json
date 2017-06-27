@@ -5,6 +5,9 @@
         "salesForceOrgId": {
             "type": "string"
         },
+        "adminUsername": {
+            "type": "string"
+        },
         "adminPassword": {
             "type": "securestring"
         },
@@ -16,6 +19,12 @@
         },
         "subnetName": {
             "type": "string"
+        },
+        "scriptJRE": {
+            "type": "string"
+        },
+        "scriptTomcat": {
+            "type": "string"
         }
     },
     "variables": {
@@ -23,7 +32,7 @@
         "subnetName":"[parameters('subnetName')]",
         "networkInterfaceName": "[concat(parameters('salesForceOrgId'),'-nic')]",
         "virtualMachineName": "[concat(parameters('salesForceOrgId'),'-vm')]",
-        "adminUserName": "sfdcadmin",
+        "adminUserName": "[parameters('adminUsername')]",
         "virtualMachineSize": "Standard_A4_v2",
         "publicIpAddressName":"[concat(parameters('salesForceOrgId'),'-ip')]",
         "networkSecurityGroupName":"[concat(parameters('salesForceOrgId'),'-nsg')]",
@@ -89,7 +98,8 @@
                             "autoUpgradeMinorVersion": true,
                             "settings": {
                                 "fileUris": [
-                                    "https://xecmsfdc.blob.core.windows.net/installmedia/installjre.ps1?sr=b&sv=2016-05-31&ss=b&srt=o&sp=r&se=2018-05-26T21:12:10Z&st=2017-05-26T13:12:10Z&spr=https&sig=nWcCh76qWjyoGB6uOfIprdNe9hw2HJ5c5bpRc6Y7HBw%3D"
+                                    "[parameters('scriptJRE')]",
+                                    "[parameters('scriptTomcat')]"
                                 ]
                             },
                             "protectedSettings":{
