@@ -6,11 +6,11 @@ $wc.DownloadFile("http://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.15/bin/apac
 # unzip
 $shell = New-Object -com shell.application;
 $zip = $shell.NameSpace("c:\temp\apache-tomcat-8.5.15-windows-x64.zip");
-$dest = $shell.NameSpace('c:\temp');
+$dest = $shell.NameSpace("c:\program files");
 $dest.CopyHere($zip.items());
 
 # install
-cd c:\temp\apache-tomcat-8.5.15\bin
+cd "c:\program files\apache-tomcat-8.5.15\bin"
 service.bat install
 
 # startup
