@@ -11,11 +11,10 @@ $proc1 = Start-Process -FilePath "C:\temp\jre-8u66-windows-x64.exe" -ArgumentLis
 $proc1.waitForExit()
 
 # set the JRE_HOME
-[Environment]::SetEnvironmentVariable("JRE_HOME", "c:\program files\java\jre1.8.0_66")
+[Environment]::SetEnvironmentVariable("JRE_HOME", "c:\program files\java\jre1.8.0_66", "Machine")
 
 # download Tomcat 8
-$wc = New-Object System.Net.WebClient
-$wc.DownloadFile("http://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.15/bin/apache-tomcat-8.5.15-windows-x64.zip", "C:\temp\apache-tomcat-8.5.15-windows-x64.zip")
+$wc.DownloadFile("http://apache.claz.org/tomcat/tomcat-8/v8.5.16/bin/apache-tomcat-8.5.16-windows-x64.zip", "C:\temp\apache-tomcat-8.5.16-windows-x64.zip")
 
 # unzip Tomcat
 $shell = New-Object -com shell.application;

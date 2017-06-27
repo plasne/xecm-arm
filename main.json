@@ -84,7 +84,7 @@
             },
              "resources":[
                     {
-                        "name": "JRE-Install",
+                        "name": "SoftwareInstall",
                         "apiVersion": "2015-06-15",
                         "type": "extensions",
                         "location": "[resourceGroup().location]",
