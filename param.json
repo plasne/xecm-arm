@@ -14,10 +14,7 @@
     "subnetName": {
         "value": "default"
     },
-    "scriptJRE": {
-        "value": "https://pelasneref.blob.core.windows.net/scripts/installjre.ps1?sv=2015-12-11&si=scripts-15CE9D180E5&sr=b&sig=kjQbltYp%2Fg8pF4nf0j0%2BwONscJ5%2F7XOW4Nfa64LViH4%3D"
-    },
-    "scriptTomcat": {
-        "value": "https://pelasneref.blob.core.windows.net/scripts/installtomcat.ps1?sv=2015-12-11&si=scripts-15CE9D180E5&sr=b&sig=kukZo%2Fztv9DD6HHD%2BH0Y7f8k3CAkI8JqI3wm4utX2QU%3D"
+    "script": {
+        "value": "https://pelasneref.blob.core.windows.net/scripts/install.ps1?sv=2015-12-11&si=scripts-15CE9D180E5&sr=b&sig=FN4RTNAny0T61upAje0pDdu4qQJPoNzo%2BIh2zT5shug%3D"
     }
 }

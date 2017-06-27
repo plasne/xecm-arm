@@ -20,10 +20,7 @@
         "subnetName": {
             "type": "string"
         },
-        "scriptJRE": {
-            "type": "string"
-        },
-        "scriptTomcat": {
+        "script": {
             "type": "string"
         }
     },
@@ -98,34 +95,11 @@
                             "autoUpgradeMinorVersion": true,
                             "settings": {
                                 "fileUris": [
-                                    "[parameters('scriptJRE')]"
+                                    "[parameters('script')]"
                                 ]
                             },
                             "protectedSettings":{
-                                "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File installjre.ps1"
-                            }
-                        },
-                        "dependsOn": [
-                            "[concat('Microsoft.Compute/virtualMachines/', variables('virtualMachineName'))]"
-                        ]
-                    },
-                    {
-                        "name": "Tomcat-Install",
-                        "apiVersion": "2015-06-15",
-                        "type": "extensions",
-                        "location": "[resourceGroup().location]",
-                        "properties": {
-                            "publisher": "Microsoft.Compute",
-                            "type": "CustomScriptExtension",
-                            "typeHandlerVersion": "1.8",
-                            "autoUpgradeMinorVersion": true,
-                            "settings": {
-                                "fileUris": [
-                                    "[parameters('scriptTomcat')]"
-                                ]
-                            },
-                            "protectedSettings":{
-                                "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File installtomcat.ps1"
+                                "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File install.ps1"
                             }
                         },
                         "dependsOn": [
